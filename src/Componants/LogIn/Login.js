@@ -114,8 +114,7 @@ const Login = () => {
                                 <button
                                     onClick={() => emailLogIn(email, password)}
                                     type="submit"
-                                    className="w-full block bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold rounded-lg
-                            px-4 py-3 mt-6">Log In</button>
+                                    className="w-full block bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold rounded-lg px-4 py-3 mt-6">Log In</button>
                             </div>
 
                             <hr className="my-6 border-gray-300 w-full" />

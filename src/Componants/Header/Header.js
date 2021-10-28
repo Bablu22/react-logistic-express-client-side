@@ -7,6 +7,7 @@ import Logo from '../../images/logo.webp'
 import useAuth from '../../hooks/useAuth';
 import User from '../../images/user.png'
 import './Header.css'
+import { Users } from '@styled-icons/heroicons-outline';
 
 const Header = () => {
     const { user, logOut } = useAuth()
@@ -37,8 +38,11 @@ const Header = () => {
                                     <div className="hidden sm:block sm:ml-auto mt-3">
                                         <div className="flex space-x-4 text-white font-medium">
                                             <NavLink to="/home">Home</NavLink>
-                                            <NavLink to="/about">About</NavLink>
-                                            <NavLink to="/department">Services</NavLink>
+                                            {user.email ? <>
+                                                <NavLink to="/">My orders</NavLink>
+                                                <NavLink to="/">Manage orders</NavLink>
+                                                <NavLink to="/">Add service</NavLink>
+                                            </> : <></>}
                                             <NavLink to="/contact">Contact</NavLink>
                                         </div>
                                     </div>
@@ -124,18 +128,21 @@ const Header = () => {
                                 <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                     <NavLink to="/home">Home</NavLink>
                                 </div>
-                                <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                    <NavLink to="/about">About</NavLink>
-                                </div>
-                                <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                    <NavLink to="/department">Services</NavLink>
-                                </div>
+                                {user.email ? <>
+                                    <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                                        <NavLink to="/">My orders</NavLink>
+                                    </div>
+                                    <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                                        <NavLink to="/">Manage orders</NavLink>
+                                    </div>
+
+                                    <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                                        <NavLink to="/">Add service</NavLink>
+                                    </div>
+                                </> : <></>}
 
                                 <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                     <NavLink to="/contact">Contact</NavLink>
-                                </div>
-                                <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                    <NavLink to="/login">Login</NavLink>
                                 </div>
 
                             </div>
