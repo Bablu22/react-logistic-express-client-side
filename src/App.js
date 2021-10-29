@@ -9,6 +9,12 @@ import Login from './Componants/LogIn/Login';
 import AuthProvider from './Context/AuthProvider';
 import Signup from './Componants/SignUp/Signup';
 import Home from './Componants/Home/Home';
+import Footer from './Componants/Footer/Footer';
+import PageNotFound from './Componants/PageNotFound/PageNotFound';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import OrderDetails from './Componants/Pages/OrderDetails/OrderDetails';
+import MyOrders from './Componants/Pages/MyOrders/MyOrders';
+
 
 function App() {
   return (
@@ -17,9 +23,9 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Router path="/home">
+            <Route path="/home">
               <Home></Home>
-            </Router>
+            </Route>
             <Route exact path="/">
               <Home></Home>
             </Route>
@@ -29,7 +35,17 @@ function App() {
             <Route path="/signup">
               <Signup></Signup>
             </Route>
+            <PrivateRoute path="/myorders">
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/details/:detailsId">
+              <OrderDetails></OrderDetails>
+            </PrivateRoute>
+            <Route path="*">
+              <PageNotFound />
+            </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

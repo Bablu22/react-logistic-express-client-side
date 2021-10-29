@@ -1,0 +1,10 @@
+.client-area{
+    background-image: url(../../../images/about-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.client-area h2{
+    color: #03123b;
+    font-family: 'Teko', sans-serif;
+}

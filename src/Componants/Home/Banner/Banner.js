@@ -6,8 +6,8 @@ const Banner = () => {
     return (
         <div className="banner">
             <div className="banner-content">
-                <h1 className="sm:text-7xl font-bold mb-5 sm:leading-snug text-4xl	leading-snug italic">Wherever you're going next, <br /> <span className="text-yellow-600">we'll find a way</span> </h1>
-                <div className="banner-text text-xl">
+                <h1 className="sm:text-8xl font-bold mb-5 sm:leading-snug text-4xl	leading-snug ">Wherever you're going next, <br /> <span className="banner-span">we'll find a way</span> </h1>
+                <div className="banner-text text-3xl">
                     <Typewriter
                         loop={true}
                         options={{

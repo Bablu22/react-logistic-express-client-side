@@ -7,7 +7,6 @@ import Logo from '../../images/logo.webp'
 import useAuth from '../../hooks/useAuth';
 import User from '../../images/user.png'
 import './Header.css'
-import { Users } from '@styled-icons/heroicons-outline';
 
 const Header = () => {
     const { user, logOut } = useAuth()
@@ -39,7 +38,7 @@ const Header = () => {
                                         <div className="flex space-x-4 text-white font-medium">
                                             <NavLink to="/home">Home</NavLink>
                                             {user.email ? <>
-                                                <NavLink to="/">My orders</NavLink>
+                                                <NavLink to="/myorders">My orders</NavLink>
                                                 <NavLink to="/">Manage orders</NavLink>
                                                 <NavLink to="/">Add service</NavLink>
                                             </> : <></>}
@@ -130,7 +129,7 @@ const Header = () => {
                                 </div>
                                 {user.email ? <>
                                     <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                        <NavLink to="/">My orders</NavLink>
+                                        <NavLink to="/myorders">My orders</NavLink>
                                     </div>
                                     <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                         <NavLink to="/">Manage orders</NavLink>
