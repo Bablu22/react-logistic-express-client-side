@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { confirmAlert } from 'react-confirm-alert';
 import Toastify from 'toastify-js';
 import OrdersTable from './OrdersTable';
 
@@ -7,11 +6,15 @@ const ManageOrders = () => {
 
     const [allorders, setAllOrders] = useState([])
     const [isApproved, setIsApproved] = useState([])
+    const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
-            .then(data => setAllOrders(data))
+            .then(data => {
+                setAllOrders(data)
+                setIsLoad(false)
+            })
     }, [allorders])
 
     console.log(allorders)
@@ -104,6 +107,11 @@ const ManageOrders = () => {
 
                                         </tr>
                                     </thead>
+                                    <div className=" w-full ml-96">
+                                        {isLoad && <div className="">
+                                            <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-gray-900"></div>
+                                        </div>}
+                                    </div>
                                     {
                                         allorders.map(orders => <OrdersTable
                                             key={orders._id}

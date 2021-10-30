@@ -6,13 +6,18 @@ import Order from './Order';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
+    const [isLoad, setIsLoad] = useState(true)
     const { user } = useAuth()
 
     useEffect(() => {
         const url = `http://localhost:5000/orders/${user.email}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setOrders(data))
+            .then(data => {
+                setOrders(data)
+                setIsLoad(false)
+
+            })
     }, [])
 
     const handleDelete = id => {
@@ -48,6 +53,11 @@ const MyOrders = () => {
     return (
         <div className="container mx-auto p-10">
             <h1 className="section-head text-6xl text-center py-10">Your booked services</h1>
+            <div>
+                {isLoad && <div className="flex justify-center items-center">
+                    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+                </div>}
+            </div>
             <div className="sm:grid grid-cols-2 gap-8">
                 {
                     orders.map(order => <Order

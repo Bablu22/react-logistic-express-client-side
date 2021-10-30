@@ -15,6 +15,9 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import OrderDetails from './Componants/Pages/OrderDetails/OrderDetails';
 import MyOrders from './Componants/Pages/MyOrders/MyOrders';
 import ManageOrders from './Componants/Pages/ManageOrders/ManageOrders';
+import AddService from './Componants/Pages/AddService/AddService';
+import ManageServices from './Componants/Pages/ManageServices/ManageServices';
+import Contact from './Componants/Pages/Contact/Contact';
 
 
 function App() {
@@ -36,11 +39,17 @@ function App() {
             <Route path="/signup">
               <Signup></Signup>
             </Route>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
             <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
             </PrivateRoute>
             <PrivateRoute path="/manageorders">
               <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/manageservice">
+              <ManageServices></ManageServices>
             </PrivateRoute>
             <PrivateRoute path="/details/:detailsId">
               <OrderDetails></OrderDetails>
