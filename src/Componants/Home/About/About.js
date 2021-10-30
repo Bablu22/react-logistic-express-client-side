@@ -1,11 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import image from '../../../images/about.webp'
 import './About.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
-        <div className="container mx-auto p-10 mt-20">
+        <div data-aos="fade-up" className="container mx-auto p-10 mt-20">
             <div className="sm:grid grid-cols-2">
                 <div className="">
                     <img src={image} alt="" />

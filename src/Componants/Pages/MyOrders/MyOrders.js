@@ -3,6 +3,8 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import useAuth from '../../../hooks/useAuth';
 import Order from './Order';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
@@ -48,10 +50,12 @@ const MyOrders = () => {
             })
     }
 
-
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
 
     return (
-        <div className="container mx-auto p-10">
+        <div data-aos="fade-up" className="container mx-auto p-10">
             <h1 className="section-head text-6xl text-center py-10">Your booked services</h1>
             <div>
                 {isLoad && <div className="flex justify-center items-center">

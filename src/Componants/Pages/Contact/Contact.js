@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
+
     return (
-        <div className="container mx-auto my-10">
+        <div data-aos="fade-up" className="container mx-auto my-10">
             <div className="sm:grid grid-cols-2 gap-4 p-10">
                 <div className="w-full">
                     <div className="sm:grid grid-cols-2 gap-5">

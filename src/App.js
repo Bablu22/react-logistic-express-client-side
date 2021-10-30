@@ -15,9 +15,9 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import OrderDetails from './Componants/Pages/OrderDetails/OrderDetails';
 import MyOrders from './Componants/Pages/MyOrders/MyOrders';
 import ManageOrders from './Componants/Pages/ManageOrders/ManageOrders';
-import AddService from './Componants/Pages/AddService/AddService';
 import ManageServices from './Componants/Pages/ManageServices/ManageServices';
 import Contact from './Componants/Pages/Contact/Contact';
+import AboutPage from './Componants/Pages/AboutPage/AboutPage';
 
 
 function App() {
@@ -41,6 +41,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/about">
+              <AboutPage></AboutPage>
             </Route>
             <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>

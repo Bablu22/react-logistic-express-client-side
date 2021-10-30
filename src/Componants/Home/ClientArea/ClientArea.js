@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Client.css'
 import image1 from '../../../images/img1.webp'
 import image2 from '../../../images/img2.webp'
@@ -10,11 +10,11 @@ import partner3 from '../../../images/partner/partner-3.png'
 import partner4 from '../../../images/partner/partner-4.png'
 import partner5 from '../../../images/partner/partner-5.png'
 import partner6 from '../../../images/partner/partner-6.png'
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ClientArea = () => {
 
 
@@ -46,8 +46,12 @@ const ClientArea = () => {
         ]
     };
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
+
     return (
-        <div className="client-area py-28">
+        <div data-aos="fade-up" className="client-area py-28">
             <div className="container mx-auto p-5">
                 <h2 className="text-5xl font-medium text-center mb-16">OUR CLIENTS & COUNTERS</h2>
                 <div className="sm:grid grid-cols-4 gap-8 p-5">

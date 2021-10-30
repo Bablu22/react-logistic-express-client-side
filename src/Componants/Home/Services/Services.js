@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Service from './Service/Service';
 import '../About/About.css'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Services = () => {
 
     const [services, setServices] = useState([])
@@ -18,8 +19,12 @@ const Services = () => {
             })
     }, [])
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
+
     return (
-        <div className="container mx-auto mt-32 mb-10 p-5">
+        <div data-aos="fade-up" className="container mx-auto mt-32 mb-10 p-5">
 
             <p className="about-span text-center text-3xl mb-4">Our Services</p>
             <h2 className="section-head text-center text-5xl font-medium mb-16">What We Can Do For You</h2>
