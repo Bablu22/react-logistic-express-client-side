@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import useAuth from '../../../hooks/useAuth';
 import Order from './Order';
 
@@ -20,12 +22,27 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    alert('Delete sucessfullay')
-                    const remaining = orders.filter(i => i._id !== id)
-                    setOrders(remaining)
+                    confirmAlert({
+                        title: 'Confirm to submit',
+                        message: 'Are you sure to do this.',
+                        buttons: [
+                            {
+                                label: 'Yes',
+                                onClick: () => {
+                                    const remaining = orders.filter(i => i._id !== id)
+                                    setOrders(remaining)
+                                }
+                            },
+
+                        ]
+                    });
+
+
                 }
+
             })
     }
+
 
 
     return (

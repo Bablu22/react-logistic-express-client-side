@@ -14,6 +14,7 @@ import PageNotFound from './Componants/PageNotFound/PageNotFound';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import OrderDetails from './Componants/Pages/OrderDetails/OrderDetails';
 import MyOrders from './Componants/Pages/MyOrders/MyOrders';
+import ManageOrders from './Componants/Pages/ManageOrders/ManageOrders';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/manageorders">
+              <ManageOrders></ManageOrders>
             </PrivateRoute>
             <PrivateRoute path="/details/:detailsId">
               <OrderDetails></OrderDetails>

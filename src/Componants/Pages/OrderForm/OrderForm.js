@@ -2,7 +2,6 @@ import React from 'react';
 import './OrderForm.css'
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
-import { useState } from 'react';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
@@ -14,8 +13,11 @@ const OrderForm = ({ id }) => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" });
     const onSubmit = data => {
+        console.log(data)
+        data.user = user.photoURL
         data.itemName = name
         data.itemImg = img
+        data.status = 'Pending'
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
@@ -41,6 +43,7 @@ const OrderForm = ({ id }) => {
                         }
                         // Callback after click
                     }).showToast();
+                    reset()
                 }
             })
     };
@@ -49,26 +52,33 @@ const OrderForm = ({ id }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
                 <label className="block text-gray-700">Name</label>
-                <input defaultValue={user.displayName} {...register("name")}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                <input placeholder="Name" defaultValue={user.displayName} {...register("name")}
+                    required className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
                 />
 
                 {/* include validation with required or other standard HTML validation rules */}
                 <label className="block text-gray-700 mt-3">Email</label>
                 <input defaultValue={user.email} {...register("email", { required: true })}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                    className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
                 />
                 {/* errors will return when field validation fails  */}
                 <label className="block text-gray-700 mt-3">Service</label>
                 <input defaultValue={name} {...register("order")} required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                    className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
                 />
                 <label className="block text-gray-700 mt-3">Date</label>
                 <input type="date" {...register("date")}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                    required className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
                 />
                 {errors.exampleRequired && <span>This field is required</span>}
-
+                <label className="block text-gray-700 mt-3">Address</label>
+                <input placeholder="Address" {...register("address")} required
+                    className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                />
+                <label className="block text-gray-700 mt-3">Phone Number</label>
+                <input placeholder="Number" {...register("phone")} required
+                    className="w-full px-4 py-2 rounded-lg bg-gray-200 mt-2 border focus:border-0 focus:bg-white focus:outline-none"
+                />
                 <input
                     className="w-full block bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold rounded-lg px-4 py-3 mt-6 cursor-pointer"
                     type="submit" value="Book Now" />

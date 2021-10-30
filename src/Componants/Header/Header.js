@@ -39,7 +39,7 @@ const Header = () => {
                                             <NavLink to="/home">Home</NavLink>
                                             {user.email ? <>
                                                 <NavLink to="/myorders">My orders</NavLink>
-                                                <NavLink to="/">Manage orders</NavLink>
+                                                <NavLink to="/manageorders">Manage orders</NavLink>
                                                 <NavLink to="/">Add service</NavLink>
                                             </> : <></>}
                                             <NavLink to="/contact">Contact</NavLink>
@@ -132,7 +132,7 @@ const Header = () => {
                                         <NavLink to="/myorders">My orders</NavLink>
                                     </div>
                                     <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                                        <NavLink to="/">Manage orders</NavLink>
+                                        <NavLink to="/manageorders">Manage orders</NavLink>
                                     </div>
 
                                     <div className="bg-gray-900 text-white text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
