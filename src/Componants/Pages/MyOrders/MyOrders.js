@@ -12,7 +12,7 @@ const MyOrders = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders/${user.email}`
+        const url = `https://polar-anchorage-43986.herokuapp.com/orders/${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -23,7 +23,7 @@ const MyOrders = () => {
     }, [])
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/orders/${user.email}/${id}`, {
+        fetch(`https://polar-anchorage-43986.herokuapp.com/orders/${user.email}/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -55,7 +55,7 @@ const MyOrders = () => {
     }, [])
 
     return (
-        <div data-aos="fade-up" className="container mx-auto p-10">
+        <div data-aos="fade-up" className="container mx-auto sm:p-10 p-5">
             <h1 className="section-head text-6xl text-center py-10">Your booked services</h1>
             <div>
                 {isLoad && <div className="flex justify-center items-center">

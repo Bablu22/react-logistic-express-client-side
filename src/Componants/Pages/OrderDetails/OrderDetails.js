@@ -8,7 +8,7 @@ const OrderDetails = () => {
     const [services, SetServices] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/services/${detailsId}`
+        const url = `https://polar-anchorage-43986.herokuapp.com/services/${detailsId}`
         fetch(url)
             .then(res => res.json())
             .then(data => SetServices(data))

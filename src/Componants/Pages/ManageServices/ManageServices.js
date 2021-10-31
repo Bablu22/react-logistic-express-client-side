@@ -8,7 +8,7 @@ const ManageServices = () => {
     const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://polar-anchorage-43986.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -18,7 +18,7 @@ const ManageServices = () => {
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/services/${id}`, {
+        fetch(`https://polar-anchorage-43986.herokuapp.com/services/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -9,7 +9,7 @@ const ManageOrders = () => {
     const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://polar-anchorage-43986.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setAllOrders(data)
@@ -17,10 +17,8 @@ const ManageOrders = () => {
             })
     }, [allorders])
 
-    console.log(allorders)
-
     const handleDelete = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://polar-anchorage-43986.herokuapp.com/orders/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -48,7 +46,7 @@ const ManageOrders = () => {
 
     const updateUsers = id => {
 
-        const url = `http://localhost:5000/orders/${id}`
+        const url = `https://polar-anchorage-43986.herokuapp.com/orders/${id}`
         fetch(url, {
             method: 'PUT',
         })
@@ -58,7 +56,6 @@ const ManageOrders = () => {
                     const updateOrder = allorders.filter((item) => setAllOrders([item]));
                     setIsApproved(true);
                 }
-                console.log(result);
             });
     }
 

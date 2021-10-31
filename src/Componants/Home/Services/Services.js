@@ -11,7 +11,7 @@ const Services = () => {
 
     useEffect(() => {
         setIsLoad(true)
-        fetch('http://localhost:5000/services')
+        fetch('https://polar-anchorage-43986.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)

@@ -22,6 +22,7 @@ const OrdersTable = (props) => {
                     <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">{itemName}</div>
                         <div className="text-sm text-gray-500">{date}</div>
+                        <div className="text-sm text-gray-500">ID: {_id}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`px-3 inline-flex text-xs leading-5 font-semibold rounded-full ${status === 'Pending' ? "bg-red-200" : 'bg-green-200'} text-green-800`}>
