@@ -62,7 +62,7 @@ const MyOrders = () => {
                     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
                 </div>}
             </div>
-            <div className="sm:grid grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
                 {
                     orders.map(order => <Order
                         key={order._id}

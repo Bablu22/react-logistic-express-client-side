@@ -9,7 +9,7 @@ const Contact = () => {
 
     return (
         <div data-aos="fade-up" className="container mx-auto my-10">
-            <div className="sm:grid grid-cols-2 gap-4 p-10">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 p-10">
                 <div className="w-full">
                     <div className="sm:grid grid-cols-2 gap-5">
                         <div className="p-5 text-center rounded-lg m-2">

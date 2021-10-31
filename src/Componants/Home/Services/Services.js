@@ -33,7 +33,7 @@ const Services = () => {
                     <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
                 </div>}
             </div>
-            <div className="sm:grid grid-cols-4 gap-4 ">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 ">
                 {
                     services.map(service => <Service
                         key={service._id}

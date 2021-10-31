@@ -49,6 +49,7 @@ const OrderForm = ({ id }) => {
     };
     return (
         <div className="form bg-white w-full p-6 lg:px-16 xl:px-12  border border-gray-200 justify-center">
+            <h2 className="about-span text-2xl">Please give additional information to receive your orders</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
                 <label className="block text-gray-700">Name</label>

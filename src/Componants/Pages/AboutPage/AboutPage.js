@@ -83,7 +83,7 @@ const AboutPage = () => {
                             </div>
                             <div className="text-center py-8 sm:py-6">
                                 <p className="text-xl text-gray-700 font-bold mb-2">Jade Bradley</p>
-                                <p className="text-base text-gray-400 font-normal">Assistans Manager</p>
+                                <p className="text-base text-gray-400 font-normal">Assistant Manager</p>
                             </div>
                         </div>
                     </div>

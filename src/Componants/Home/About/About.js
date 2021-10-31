@@ -10,7 +10,7 @@ const About = () => {
     }, [])
     return (
         <div data-aos="fade-up" className="container mx-auto p-10 mt-20">
-            <div className="sm:grid grid-cols-2">
+            <div className="grid  lg:grid-cols-2 grid-cols-1">
                 <div className="">
                     <img src={image} alt="" />
                 </div>
